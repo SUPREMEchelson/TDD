@@ -1,8 +1,10 @@
 package fr.p10.miage.rps.model;
-import fr.p10.miage.rps.model.Result;
-public class RockPaperScissors {
+import org.testng.annotations.Parameters;
 
+public class RockPaperScissors {
     Result play(RPSEnum p1, RPSEnum p2){
-        return Result.WIN;
+        if(p1 == RPSEnum.PAPER && p2 == RPSEnum.ROCK) {return Result.WIN;}
+        return Result.LOST;
     }
 }
+
