@@ -58,10 +58,10 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    85,7%
+    90,9%
   </span>
   <span class="absValue">
-    (6/ 7)
+    (10/ 11)
   </span>
 </td>
 </tr>
@@ -77,25 +77,28 @@
 <i>3</i>&nbsp;
 <b class="fc"><i>4</i>&nbsp;public class RockPaperScissors {</b>
 <i>5</i>&nbsp;    Result play(RPSEnum p1, RPSEnum p2){
-<b class="fc"><i>6</i>&nbsp;        if(p1 == RPSEnum.PAPER &amp;&amp; p2 == RPSEnum.ROCK) {return Result.WIN;}</b>
-<i>7</i>&nbsp;
-<b class="fc"><i>8</i>&nbsp;        if(p1 == RPSEnum.PAPER &amp;&amp; p2 == RPSEnum.PAPER){</b>
-<b class="fc"><i>9</i>&nbsp;            return Result.WIN;</b>
-<i>10</i>&nbsp;        }
-<b class="fc"><i>11</i>&nbsp;        if(p1 == RPSEnum.PAPER &amp;&amp; p2 == RPSEnum.SCISSORS){</b>
-<b class="fc"><i>12</i>&nbsp;            return Result.LOST;</b>
-<i>13</i>&nbsp;        }
-<b class="nc"><i>14</i>&nbsp;        return Result.LOST;</b>
-<i>15</i>&nbsp;
-<i>16</i>&nbsp;    }
-<i>17</i>&nbsp;}
+<b class="fc"><i>6</i>&nbsp;</b>
+<b class="fc"><i>7</i>&nbsp;        if(p1 == RPSEnum.PAPER &amp;&amp; p2 == RPSEnum.ROCK) {return Result.WIN;}</b>
+<b class="fc"><i>8</i>&nbsp;        if(p1 == RPSEnum.ROCK &amp;&amp; p2 == RPSEnum.SCISSORS){ return Result.WIN;}</b>
+<b class="fc"><i>9</i>&nbsp;        if(p1 == RPSEnum.SCISSORS &amp;&amp; p2 == RPSEnum.PAPER) { return Result.WIN;}</b>
+<i>10</i>&nbsp;
+<b class="fc"><i>11</i>&nbsp;        if(p1 == RPSEnum.PAPER &amp;&amp; p2 == RPSEnum.PAPER){return Result.TIE;}</b>
+<b class="fc"><i>12</i>&nbsp;        if(p1 == RPSEnum.ROCK &amp;&amp; p2 == RPSEnum.ROCK){return Result.TIE;}</b>
+<b class="fc"><i>13</i>&nbsp;        if(p1 == RPSEnum.SCISSORS &amp;&amp; p2 == RPSEnum.SCISSORS){return Result.TIE;}</b>
+<b class="nc"><i>14</i>&nbsp;</b>
+<b class="pc"><i>15</i>&nbsp;        if(p1 == RPSEnum.PAPER &amp;&amp; p2 == RPSEnum.SCISSORS){return Result.LOST;}</b>
+<i>16</i>&nbsp;
+<b class="fc"><i>17</i>&nbsp;        return Result.LOST;</b>
 <i>18</i>&nbsp;
+<i>19</i>&nbsp;    }
+<i>20</i>&nbsp;}
+<i>21</i>&nbsp;
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-09-19 21:07</div>
+    <div style="float:right;">generated on 2020-09-19 23:43</div>
 </div>
 </body>
 </html>
