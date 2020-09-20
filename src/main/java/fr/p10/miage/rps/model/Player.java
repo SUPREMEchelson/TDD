@@ -6,7 +6,7 @@ import java.util.List;
 public class Player {
     public  Player(String Name, ArrayList<RPSEnum> collection){
         this.Name = Name;
-        this.collection = collection;
+        this.collection = (ArrayList<RPSEnum>) collection.clone();
 
     }
     public Player(String Name){

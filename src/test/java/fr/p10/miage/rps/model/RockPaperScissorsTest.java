@@ -1,6 +1,9 @@
 package fr.p10.miage.rps.model;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+
 import static org.testng.Assert.*;
 
 public class RockPaperScissorsTest {
@@ -68,5 +71,40 @@ RockPaperScissors rps;
     {
         Object[][] data3 = { {RPSEnum.PAPER,RPSEnum.SCISSORS}, {RPSEnum.ROCK,RPSEnum.PAPER}, {RPSEnum.SCISSORS,RPSEnum.ROCK}};
         return data3;
+    }
+    /*@Test
+    public void winplay(){
+        ArrayList <RPSEnum> movp1 = new ArrayList<RPSEnum>();
+        ArrayList <RPSEnum> movp2 = new ArrayList<RPSEnum>();
+        movp1.add(RPSEnum.ROCK);
+        movp2.add(RPSEnum.SCISSORS);
+        Player p1 = new Player("mathieu", movp1);
+        Player p2 = new Player("chelson",movp2);
+        assertEquals(rps.play(p1,p2),Result.WIN);
+
+
+    }*/
+
+    @Test(dataProvider = "WinDataPlay")
+    public void WintestPlay(Player p1, Player p2)
+    {
+        assertEquals((rps.play(p1,p2)),Result.WIN);
+    }
+
+    @DataProvider(name="WinDataPlay")
+    public Object[][] getDataPlay1()
+    {
+        ArrayList<RPSEnum> movPaper = new  ArrayList<RPSEnum>();
+        ArrayList<RPSEnum> movRock = new  ArrayList<RPSEnum>();
+        ArrayList<RPSEnum> movScissors = new  ArrayList<RPSEnum>();
+
+        movPaper.add(RPSEnum.PAPER);
+        movRock.add(RPSEnum.ROCK);
+        movScissors.add(RPSEnum.SCISSORS);
+
+        Object[][] dataPlay1 = { {new Player("Mathieu",movScissors) ,new Player("chelson",movPaper)},
+                {new Player("Paul",movRock), new Player("Lionnel",movScissors)},
+                { new Player("Jean",movPaper), new Player("James",movRock) }};
+        return dataPlay1;
     }
 }

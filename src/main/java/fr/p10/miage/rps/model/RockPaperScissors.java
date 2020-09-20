@@ -18,7 +18,7 @@ public class RockPaperScissors {
 
     }
     Result play (Player p1, Player p2 ){
-        return Result.LOST;
+        return play(p1.getNextMove(),p2.getNextMove());
     }
 
 }
