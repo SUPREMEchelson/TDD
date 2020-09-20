@@ -4,9 +4,6 @@ import java.util.List;
 
 
 public class Player {
-    public Player(){
-
-    }
     public  Player(String Name, ArrayList<RPSEnum> collection){
         this.Name = Name;
         this.collection = collection;
@@ -14,16 +11,35 @@ public class Player {
     }
     public Player(String Name){
         this.Name =Name;
-        this.collection = collection;
+        this.collection = new ArrayList<RPSEnum>();
+        for (int i=0; i<tailleListeMouvement; i++) {
+            collection.add(RPSEnum.aleatoire());
+        }
     }
-       /* List<Integer> givenList = Arrays.asList(1, 2, 3);
-        Random rand = new Random();
-        int randomElement = givenList.get(rand.nextInt(givenList.size()));
+    public String getName(){
+        return Name;
+    }
+    public int getScore(){
+        return Score;
+    }
+    public static int getTailleListeMouvement(){
+        return tailleListeMouvement;
+    }
+    public RPSEnum getNextMove(){
+        if (collection.isEmpty()){
+            return  null;
+        } else{
+            return collection.remove(0);
+        }
+    }
+    public void setScore(int score){
+        this.Score = score;
+    }
 
-        */
-    }
+
     String Name;
     Integer Score;
-    ArrayList<RPSEnum>  collection = new ArrayList<RPSEnum>();
+    ArrayList<RPSEnum>  collection;
+    private static final int tailleListeMouvement = 10;
 
 }
