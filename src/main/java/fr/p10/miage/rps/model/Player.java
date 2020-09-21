@@ -7,8 +7,8 @@ public class Player {
     public  Player(String Name, ArrayList<RPSEnum> collection){
         this.Name = Name;
         this.collection = (ArrayList<RPSEnum>) collection.clone();
-
     }
+
     public Player(String Name){
         this.Name =Name;
         this.collection = new ArrayList<RPSEnum>();
@@ -32,11 +32,10 @@ public class Player {
             return collection.remove(0);
         }
     }
+
     public void setScore(int score){
         this.Score = score;
     }
-
-
     String Name;
     Integer Score;
     ArrayList<RPSEnum>  collection;
